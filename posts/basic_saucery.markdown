@@ -4,7 +4,7 @@ Today I decided to finally bootstrap a simple, statically generated blog on top 
 Now, why don't I just use an existing package, such as [Jekyll](http://jekyllrb.com/)? Simple, it's still too complicated for my needs -- a basic, working blog.
 
 That's why I decided to get stuff done and write a simple Python script using the [Python markdown library](http://freewisdom.org/projects/python-markdown/).
-The code is self-explanatory, so I'll just post the code listing, which you can also find [here](genPosts.py):
+The code is self-explanatory, so I'll just post the code listing, which you can also find [here](../genPosts.py):
 
 
     import sys, os
