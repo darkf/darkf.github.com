@@ -12,7 +12,7 @@ The code is self-explanatory, so I'll just post the code listing, which you can 
     from markdown import markdown
     
     if len(sys.argv) != 3:
-    	print "usage: %s FILE TITLE" % sys.argv[0]
+        print "usage: %s FILE TITLE" % sys.argv[0]
     
     FILE = sys.argv[1]
     TITLE = sys.argv[2]
@@ -24,17 +24,19 @@ The code is self-explanatory, so I'll just post the code listing, which you can 
       <link rel="stylesheet" type="text/css" href="../style.css"/>
     </head>
     <body>
-    <h2>%s</h2>
-    <hr/>
-    """ % (TITLE, TITLE)
+    <div id="content">
+        <h2>%s</h2>
+        <hr/>
+        """ % (TITLE, TITLE)
     
     POST = """
+    </div>
     </body>
     </html>"""
     
     with open(FILE, "r") as f:
-    	with open(os.path.join("posts", splitext(basename(FILE))[0]+".html"), "w") as g:
-    		g.write(PRE+markdown(f.read())+POST)
+        with open(os.path.join("posts", splitext(basename(FILE))[0]+".html"), "w") as g:
+            g.write(PRE+markdown(f.read())+POST)
 
 
 (Now all I need to do is write my own hacky Markdown parser and ditch this shoddy one.)

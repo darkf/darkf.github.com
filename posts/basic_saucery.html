@@ -1,13 +1,14 @@
 <!doctype html>
 <html>
 <head>
-  <title>Basic Saucery</title>
+  <title>Basic (Blog) Saucery</title>
   <link rel="stylesheet" type="text/css" href="../style.css"/>
 </head>
 <body>
-<h2>Basic Saucery</h2>
-<hr/>
-<p>Today I decided to finally bootstrap a simple, statically generated blog on top of my <a href="http://pages.github.com/">Github Pages</a> site.</p>
+<div id="content">
+	<h2>Basic (Blog) Saucery</h2>
+	<hr/>
+	<p>Today I decided to finally bootstrap a simple, statically generated blog on top of my <a href="http://pages.github.com/">Github Pages</a> site.</p>
 <p>Now, why don't I just use an existing package, such as <a href="http://jekyllrb.com/">Jekyll</a>? Simple, it's still too complicated for my needs -- a basic, working blog.</p>
 <p>That's why I decided to get stuff done and write a simple Python script using the <a href="http://freewisdom.org/projects/python-markdown/">Python markdown library</a>.
 The code is self-explanatory, so I'll just post the code listing, which you can also find <a href="../genPost.py">here</a>:</p>
@@ -28,11 +29,13 @@ PRE = """&lt;!doctype html&gt;
   &lt;link rel="stylesheet" type="text/css" href="../style.css"/&gt;
 &lt;/head&gt;
 &lt;body&gt;
-&lt;h2&gt;%s&lt;/h2&gt;
-&lt;hr/&gt;
-""" % (TITLE, TITLE)
+&lt;div id="content"&gt;
+    &lt;h2&gt;%s&lt;/h2&gt;
+    &lt;hr/&gt;
+    """ % (TITLE, TITLE)
 
 POST = """
+&lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;"""
 
@@ -41,5 +44,6 @@ with open(FILE, "r") as f:
         g.write(PRE+markdown(f.read())+POST)
 </code></pre>
 <p>(Now all I need to do is write my own hacky Markdown parser and ditch this shoddy one.)</p>
+</div>
 </body>
 </html>
