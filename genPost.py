@@ -15,11 +15,13 @@ PRE = """<!doctype html>
   <link rel="stylesheet" type="text/css" href="../style.css"/>
 </head>
 <body>
-<h2>%s</h2>
-<hr/>
-""" % (TITLE, TITLE)
+<div id="content">
+	<h2>%s</h2>
+	<hr/>
+	""" % (TITLE, TITLE)
 
 POST = """
+</div>
 </body>
 </html>"""
 
