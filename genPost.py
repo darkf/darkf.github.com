@@ -18,7 +18,7 @@ PRE = """<!doctype html>
 </head>
 <body>
 <div id="content">
-	<a href="https://github.com/darkf"><em>darkf</em></a>'s page <span id="time">generated %s</span>
+	<a href="https://github.com/darkf"><</a> <span id="time">generated %s</span>
 	<br/><br/>
 	<h2>%s</h2>
 	<hr/>
