@@ -4,6 +4,7 @@ from markdown import markdown
 
 if len(sys.argv) != 3:
 	print "usage: %s FILE TITLE" % sys.argv[0]
+	sys.exit(1)
 
 FILE = sys.argv[1]
 TITLE = sys.argv[2]
