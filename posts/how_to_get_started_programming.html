@@ -6,7 +6,7 @@
 </head>
 <body>
 <div id="content">
-	<a href="http://darkf.github.io">&lt;</a> <span id="time">published December 03, 2013</span>
+	<a href="http://darkf.github.io">&lt;</a> <span id="time">published December 03, 2013 last modified December 03, 2013</span>
 	<br/><br/>
 	<h2>How To Get Started Programming (WIP)</h2>
 	<hr/>
@@ -20,86 +20,102 @@
 <p>Programming is also an art and a craft. You may start out using Play-Doh to create simple solid-colored blobs, but through experience you will build up your skill to craft fine ice sculptures.</p>
 <p>This is not necessarily a quick or painless task. Indeed, Google Research Director <a href="http://en.wikipedia.org/wiki/Peter_Norvig">Peter Norvig</a> suggests that <a href="http://norvig.com/21-days.html">becoming a programmer is a long process</a>. A skilled artist takes many years to hone their skills; the same applies to programming. But much in the same way, anyone may learn to paint or draw, but it takes time to become excellent at it.</p>
 <p>Don't let this deter you from learning - it is an enjoyable process and you will learn <em>much</em> on the way.</p>
+<p>I'll give you one piece of advice now: Don't just read. Do. If you just read a book or tutorial, but don't engage yourself and write (and then fix) your own programs, you're not going to get the full experience, and you will likely just forget what you learned. Don't be afraid to experiment -- that's what it's all about!</p>
 <h1>What technology should I pick?</h1>
 <p>This question, or one of its variants ("What programming language should I use?") is probably the most common out there. There are many factors in deciding which tech to use out there, and it depends wholly on your goals.</p>
 <p>I will separate at the high level two different kinds of programmers: those who want to learn for <strong>education</strong> (i.e., "This is interesting, I want to know more!"), or for <strong>monetary gain</strong> (i.e., "Wow, this is a lucrative business, I want to get in on this!").</p>
-<p>Those learning more towards the educational benefit might be more interested in learning the foundations of programming well before moving on to tackling large code frameworks and making world-class applications with them. It is very valuable to have a good grasp on these fundamentals as it will make many things easier for you.</p>
+<p>Those leaning more towards the educational benefit might be more interested in learning the foundations of programming well before moving on to tackling large code frameworks and making world-class applications with them. It is very valuable to have a good grasp on these fundamentals as it will make many things easier for you.</p>
 <p>Those more for business will probably tend to go for the more applicative side, wanting to dive into learning how to make applications that people can use right away.</p>
 <p>Thankfully there is not much difference between these two in terms of technologies used, and you should know that <strong>it does not matter where you start</strong>: across your programming career you will learn many technologies, the paths of the businessman and the hobbyist will always intersect at some point. The end goal is the achievable "I can write, maintain and understand software".</p>
-<p>There is a lot of confusion surrounding what programming language to pick when learning. Some parties recommend using <a href="http://en.wikipedia.org/wiki/C++">C++</a>, some <a href="http://en.wikipedia.org/wiki/C_Sharp_(programming_language)">C#</a>, or some something else entirely. Again, it does not matter where you start, however some programming languages are easier to get started <em>learning how to program</em>. You want to strike a balance between these.</p>
-<h1>Programming Paradigms</h1>
-<p>Now, different conceptual styles in programming languages are often separated into <a href="http://en.wikipedia.org/wiki/Programming_paradigm"><strong>paradigms</strong></a>.</p>
-<p>Programming languages can either take these to extremes (single-paradigm languages) or take a hybrid approach (multi-paradigm languages). The differences are important because the concepts can differ wildly across them. Many languages, however, are multi-paradigm and mix some freely.</p>
-<p><strong>Assembly</strong> languages are among the lowest-level text-based languages. They accept CPU-specific commands and execute them without much interpretation. Usually you don't use these except when building operating systems or low-level micro-optimizing higher level code.</p>
-<p>Control flow (i.e., "Where the execution goes") in Assembly is linear - it keeps executing lines of code until you tell it to <strong>jump</strong> (sometimes known as <strong>GO TO</strong> in other languages) to another line.   </p>
-<p><strong>Structural</strong> languages add higher-level control flow. You get constructs like <strong>if</strong>...<strong>then</strong>...<strong>else</strong> for conditional execution, <strong>while...do</strong> constructs for conditional looping, etc. These make patterns more obvious and explicit.</p>
-<p>Most high-level languages support at least if-then-else, if not also imperative loops like while...do, do...while, for loops, etc.</p>
-<p><strong>Procedural</strong> languages add <strong>procedures</strong>, often basically synonymous with <strong>functions</strong>, into the mix. Code is separated by functions which often do one computation -- such as sum a list of integers -- by accepting an input, doing some work, and then returning a result.</p>
-<p><strong>Object-Oriented</strong> (OOP) languages add <strong>objects</strong> (basically containers of data and operations; they're specific instances of classes), and <strong>classes</strong> (types of objects, such as <strong>Animal</strong>)</p>
-<p>The the main architectural focus in OOP is creating classes that represent re-usable computations and instances of those classes that work together to build up your program.
-It is said to increase the modularity of programs.</p>
-<p><strong>Imperative</strong> languages consist of imperative <strong>statements</strong> that instruct the computer how to do something, instead of <em>what</em> to do. This is a very common paradigm and used in many languages such as Python, C, Java, etc.</p>
-<p>Say you want to write a function to sum a list of integers. In imperative Python this might look like:</p>
-<pre><code>def sum(lst):
-    total = 0
-    for number in lst:
-        total = total + number
-    return total
+<p>There is a lot of confusion surrounding what programming language to pick when learning. Some parties might recommend using <a href="http://en.wikipedia.org/wiki/C++">C++</a>, some <a href="http://en.wikipedia.org/wiki/C_Sharp_(programming_language)">C#</a>, or some something else entirely. Again, it does not matter where you start, however some programming languages are easier to get started <em>learning how to program</em>. You want to strike a balance between these.</p>
+<h1>Programming Languages: Beginner Summary</h1>
+<p>If you're just starting off, here's a list of great and popular languages for beginners and experienced programmers alike. If you're just starting off, I recommend skipping the next sections (don't worry, they're just filled with <a href="http://en.wikipedia.org/wiki/Technobabble">technobabble</a> rambling) and jumping to the conclusion, then diving into your language of choice! Pick one that sounds the most fun to you.</p>
+<p>I recommend you steer clear of pay sites that offer you courses to learn. You can get by just fine (if not better) using only free resources. Some of these sites give a very superficial overview and I cannot recommend them.</p>
+<p>Now, on to the list:</p>
+<p><a href="http://en.wikipedia.org/wiki/Python_(programming_language)"><strong>Python</strong></a> is an amazing general-purpose language that will let you go far and wide. It's easy to pick up, beginner-friendly, powerful, robust, well-designed, and comes batteries-included with tons of libraries for you to play with and make cool things. I recommend it as a first language and to anyone else.</p>
+<p>You can start learning it now using <a href="http://learnpythonthehardway.org/">Learn Python The Hard Way</a>. You can skip installing it at first if you want to and try it in your browser with <a href="http://repl.it/">repl.it</a>.</p>
+<p>As an example of what Python looks like, observe the following program:</p>
+<pre><code>nums = raw_input("Enter a list of numbers: ").split(" ")
+print(sum(int(num) for num in nums))
 </code></pre>
-<p>Instead of telling the program what it <em>is</em> you want to do, you are just telling it what to do.</p>
-<p><strong>Functional</strong> languages make functions (usually more in the mathematical sense) the prime method of separating and composing computations. Recursion (calling the same function from the function itself) of functions is usually used for looping as well. In the functional paradigm, you are often programming <strong>declaratively</strong> -- saying <em>what</em> something is rather than <em>how</em> it is done.</p>
-<p><strong>Pure functional</strong> languages are often more strict about this, while non-purely functional languages are typically more multi-paradigm, with imperative, OO, or both styles.
-Examples of purely functional languages would be Haskell, and to some extends Erlang (altough Erlang includes globally mutable state, which is usually off-limits to purely functional languages).</p>
-<p>Examples of non-pure functional languages include F#, OCaml, Scala, and also Python, Ruby, etc.</p>
-<p>If you want to write a sum function in a functional style, you can do it several ways: you can build on top of an existing function (like <code>foldl</code> or <code>reduce</code>), or write it explicitly using recursion. Here are a few examples in Python:</p>
-<p>Using <code>reduce</code>:
-    import operator
-    def sum(lst):
-        return reduce(operator.add, 0, lst)</p>
-<p>A sum of a list is a <a href="http://en.wikipedia.org/wiki/Fold_(higher-order_function)">fold</a> pattern, and <code>reduce</code> allows you to make this explicit by passing in a function to be used with it. In this case, we use <code>operator.add</code> (the <code>+</code> addition operator), using <code>0</code> as a base value (we use <code>0</code> because it is the identity of addition -- <code>x + 0</code> is <code>x</code>.) We are saying <em>what</em> sum is.</p>
-<p>Using recursion to write out the fold:</p>
-<pre><code>def sum(lst):
-    if lst == []: # If our list is empty, we've recursed all the way down,
-                  # or were passed an empty list. Return our base value.
-        return 0
-    else: # Otherwise, our list isn't empty
-        return lst[0] + sum(lst[1:]) # So return the first element plus
-                                     # the sum of the rest of the elements
+<p>Can you figure out what it does? I'll give you a spoiler: It asks the user on the command line for a list of numbers, separated by spaces, and then returns their sum. Python can read very much like English, for example, the above could also be written more verbosely:</p>
+<pre><code>total = 0
+inputs = raw_input("Enter a list of numbers: ").split(" ")
+for number in inputs:
+    total = total + int(number)
+print(total)
 </code></pre>
-<h1>Program Execution</h1>
-<p>There are a few main ways implementations of programming languages execute programs:</p>
+<p>For some cool libraries (code written by others that you can use to build things), check out the following:</p>
 <ul>
-<li>
-<p><strong>Compiled</strong> languages often take source code files and output an executable binary (such as a <code>.exe</code> file), or a bytecode file (which can then be run by an interpreter) ahead-of-time.</p>
-<p>C++ compilers often output executable binaries, while Java compilers often output bytecode (<code>.class</code> files, which are then run by the <code>java</code> interpreter.)</p>
-</li>
-<li>
-<p><strong>Interpreted</strong> languages often just take source code and execute it directly, skipping the ahead-of-time compilation step. These let you instantly run and test your programs, but at an increased start-up time, since the interpreter needs to parse your source code to understand it. Examples of this sort would be Python, Ruby, PHP, Perl, et cetera.</p>
-</li>
-<li>
-<p><strong>JIT</strong> implementations offer a hybrid approach -- they compile code (either source code or bytecode) <strong>on-the-fly</strong> when required to, possibly offering runtime code optimizations to speed up performance.
-    Examples of this sort would be C#, Java, and some implementations of Python (pypy) and Ruby (Rubinius).</p>
-</li>
+<li><a href="http://flask.pocoo.org/"><strong>Flask</strong></a> for building websites</li>
+<li><a href="http://www.pygame.org/news.html"><strong>pygame</strong></a> for building video games and other graphical applications</li>
+<li><a href="http://www.renpy.org/"><strong>Ren'Py</strong></a> for building <a href="http://en.wikipedia.org/wiki/Visual_novel">Visual Novel</a> games</li>
+<li><a href="http://www.numpy.org/"><strong>numpy</strong></a> for numerical processing</li>
 </ul>
-<p>Don't be afraid if you don't understand any of this, it's not really important.</p>
-<p>There are also different ways to edit source code. Don't be roped in by pointless debates or opinions, do what you're most comfortable with. In text-based programming languages, you can use just a text editor (I recommend Sublime Text 2, but you can use Notepad++, <code>vim</code> or <code>emacs</code>, or something else.) It is sometimes preferable (especially in more tedious and verbose languages like <em>Java</em>) to use an Integrated Development Environment, or IDE. These combine the functionality of text editors with special treatment of source code, and usually provide some way to easily build and run your code.</p>
-<h1>Programming Languages (and Libraries)</h1>
+<p><a href="http://en.wikipedia.org/wiki/Ruby_(programming_language)"><strong>Ruby</strong></a> is another good general-purpose language, and is very similar to Python. An example of it:</p>
+<pre><code>total = 0
+print "Enter a list of numbers: "
+gets.split(/ /).each do |input|
+total = total + input.to_i
+end
+puts total
+</code></pre>
+<p>It's quite a bit different, but close nonetheless.</p>
+<p>To get started learning Ruby, try out the <a href="http://www.rubyinside.com/media/poignant-guide.pdf">Poignant Guide to Ruby</a>, possibly with <a href="http://tryruby.org/levels/1/challenges/0">tryruby</a>.</p>
+<p>For some cool stuff to use to build your programs:</p>
+<ul>
+<li><a href="http://www.sinatrarb.com/"><strong>Sinatra</strong></a> for building websites</li>
+</ul>
+<p><a href="http://en.wikipedia.org/wiki/C_Sharp_(programming_language)"><strong>C#</strong></a> is a good general-purpose language as well; this time diverging from Python or Ruby by being <em>statically typed</em> -- meaning you need to tell the computer what <em>type</em> (such as number, text, date, etc) a value is. Here's what our example program looks like in C#:</p>
+<pre><code>using System;
+
+class Program
+{
+    static void Main()
+    {
+        int total = 0;
+        string[] inputs = Console.ReadLine().Split(' ');
+        foreach(string input in inputs) {
+            total = total + int.Parse(input);
+        }
+        Console.WriteLine(total);
+    }
+}
+</code></pre>
+<p>Don't be scared by its relative size -- 4 lines of that is usually generated by your <a href="http://en.wikipedia.org/wiki/Integrated_development_environment">Integrated Development Environment</a>, or IDE. The rest is mostly due to giving it the types of <em>variables</em> such as total, inputs, and input. This lets you make sure that you're not accidentally adding text such as <code>"quack"</code> to a number such as <code>5</code>.</p>
+<p>C# is also great for building graphical (<a href="http://en.wikipedia.org/wiki/Graphical_user_interface">GUI</a>) applications, most IDEs featuring a powerful drag-and-drop designer.</p>
+<p>To get started learning C#, I recommend getting an IDE:</p>
+<ul>
+<li><a href="http://www.visualstudio.com/en-US/products/visual-studio-express-vs">Visual C# Express Edition</a> is a free, official IDE for C# from Microsoft. Windows only.</li>
+<li><a href="http://www.icsharpcode.net/opensource/sd/">SharpDevelop</a> is a free third-party IDE for Windows.  </li>
+<li><a href="http://monodevelop.com/">MonoDevelop</a> is a free, <a href="http://en.wikipedia.org/wiki/Open_source">open source</a> IDE for Windows, Linux, Mac OS X, and other more obscure platforms. It also comes shipped with <a href="http://unity3d.com/">Unity3D</a>.</li>
+</ul>
+<p>If you're on a non-Windows platform, you'll probably want to grab MonoDevelop and a copy of the <a href="http://www.mono-project.com/Main_Page">Mono</a> compiler.</p>
+<p>To get started learning C#, check around your favorite search engine for some tutorials that fit you, or maybe try out the book <a href="http://www.amazon.com/Head-First-C-Jennifer-Greene/dp/1449343503">Head First C#</a>.</p>
+<p>For some cool stuff to use to build programs using C#:</p>
+<ul>
+<li><a href="http://xamarin.com/ios">MonoTouch</a> to create iOS and Android apps</li>
+<li><a href="http://monogame.codeplex.com/">MonoGame</a> for video games supporting Windows, Linux, OS X, iOS, Android, and other platforms. Replaces the <a href="http://en.wikipedia.org/wiki/Microsoft_XNA">Microsoft XNA</a> framework and is generally compatible with it. Indie game developers love this.</li>
+</ul>
+<p>The <a href="http://unity3d.com/">Unity3D</a> video game engine lets you use C# with it as well.</p>
+<p>Now get to it!</p>
+<h1>Programming Languages and Libraries: Long Version</h1>
 <p>Now that you know some parlance, let's tackle some common technologies and their uses:</p>
 <p>Some sects, such as <strong>video game programmers</strong>, often use <a href="http://en.wikipedia.org/wiki/C++">C++</a> and <a href="http://en.wikipedia.org/wiki/C_Sharp_(programming_language)">C#</a>.
 C++ is a notoriously massive and arduous language, with historical artifacts from C. Modern (<a href="http://en.wikipedia.org/wiki/C++11">C++11</a> and soon to be <a href="http://en.wikipedia.org/wiki/C%2B%2B14">C++14</a>) C++ is often written at a higher level (using features such as iterators, smart pointers, references, etc.) than more archaic C++ (which often use C remnants such as unwrapped arrays, raw pointers, et cetera.)</p>
 <p><a href="http://en.wikipedia.org/wiki/C++"><strong>C++</strong></a> is not necessarily a bad place to end up, but it might not be the best for beginning. Should you ever choose it, however, <a href="http://www.amazon.com/Primer-5th-Edition-Stanley-Lippman/dp/0321714113">C++ Primer</a> (not to be confused with C++ Primer Plus) is a good place to start.
 <a href="http://en.cppreference.com/w/">C++ Reference</a> is a great reference site to use as well.
 C++ is good for low-level systems programming (such as operating systems, or video games) that require high performance. It does sacrifice quite a lot of <a href="">type safety</a> to achieve that, compilation times can be slow, and the process of compilation is often tedious.</p>
-<p><a href="http://en.wikipedia.org/wiki/C_Sharp_(programming_language)"><strong>C#</strong></a> is not a bad place to start. It is a statically-typed object-oriented language in the style of <em>Java</em>. Visual C# (Microsoft's IDE) and SharpDevelop (a third-party one) provide an easy but powerful drag-and-drop interface for creating graphical (GUI) applications. Mono (and MonoGame for video games) is a good framework for building applications and deploying them to PC, Mac, iOS, Android, and other platforms.</p>
+<p><a href="http://en.wikipedia.org/wiki/C_Sharp_(programming_language)"><strong>C#</strong></a> is not a bad place to start. It is a statically-typed object-oriented language in the style of <em>Java</em>. Visual C# (Microsoft's IDE) and <a href="http://www.icsharpcode.net/opensource/sd/">SharpDevelop</a> (a third-party one) provide an easy but powerful drag-and-drop interface for creating graphical (GUI) applications. <a href="http://www.mono-project.com/Main_Page">Mono</a> (and <a href="http://monogame.codeplex.com/">MonoGame</a> for video games) is a good framework for building applications and deploying them to PC, Mac, iOS, Android, and other platforms.</p>
 <p><a href="http://en.wikipedia.org/wiki/Python_(programming_language)"><strong>Python</strong></a> is an dynamically-typed object-oriented/functional interpreted language. It is a great beginner language, but not just for them - it is extremely capable and great for small and mid-sized tasks.
-It offers high-level features, such as first-class functions, object orientation, modules to cleanly separate source code, and operations for easily working with text, lists, sets, mappings, etc. Being dynamically typed means it will not be able to catch type errors (such as adding a string to a number) at compile-time (i.e. when you first launch the program), but only at runtime (i.e., when the faulty expression is evaluated.) With proper practice this is usually not much of an issue.</p>
+It offers high-level features, such as first-class functions, object orientation, modules to cleanly separate source code, and operations for easily working with text, lists, sets, mappings, etc. Being dynamically typed means it will not be able to catch type errors (such as adding a string to a number) at compile-time (i.e. when you first launch the program), but only at run-time (i.e., when the faulty expression is evaluated.) With proper practice this is usually not much of an issue.</p>
 <p>A good resource for learning Python is <a href="http://learnpythonthehardway.org/">Learn Python The Hard Way</a>.</p>
 <p>For Web development, Python has some good libraries: <a href="http://flask.pocoo.org/"><strong>Flask</strong></a> for building from the foundation up, and <a href="https://www.djangoproject.com/"><strong>Django</strong></a> for re-using parts made by other people. There is also Pyramid, Pylons, etc.
 For video games, <a href="http://www.pygame.org/news.html"><strong>Pygame</strong></a> is a nice framework, as well as <a href="http://www.pyglet.org/">Pyglet</a> and <a href="http://cocos2d.org/">Cocos2D</a>. There are some 3D engines like <a href="https://www.panda3d.org/">Panda3D</a> used by, for example, Disney Interactive.
 Scientists often use Python as well for numerical calculations, with <a href="http://www.numpy.org/">numpy</a> and <a href="http://www.scipy.org/">scipy</a>.</p>
 <p><a href="http://en.wikipedia.org/wiki/Ruby_(programming_language)"><strong>Ruby</strong></a> is also a dynamic interpreted language like Python, but with more loose, expression-based syntax. It borrows a lot of concepts from good ol' <a href="http://en.wikipedia.org/wiki/Smalltalk">Smalltalk</a>.</p>
 <p>A good resource for learning Ruby is <a href="http://www.rubyinside.com/media/poignant-guide.pdf">The Poignant Guide to Ruby</a> or one of the other <a href="https://www.ruby-lang.org/en/documentation/">good resources</a> available.</p>
-<p>For Web development, <a href=""><strong>Sinatra</strong></a>http://www.sinatrarb.com/ is a good and elegant microframework, and <a href="http://rubyonrails.org/"><strong>Rails</strong></a> is a <strong>very</strong> popular heavier framework.</p>
+<p>For Web development, <a href="http://www.sinatrarb.com/"><strong>Sinatra</strong></a> is a good and elegant microframework, and <a href="http://rubyonrails.org/"><strong>Rails</strong></a> is a <strong>very</strong> popular heavier framework.</p>
 <p><a href="http://en.wikipedia.org/wiki/PHP"><strong>PHP</strong></a> is another dynamic language. It is almost solely used for Web development, but it is often <a href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/">considered poorly designed</a>, and it is easy to introduce hard-to-find bugs. If you are looking to get into the PHP industry, go for it. If not, you might save yourself a headache or few. Laravel is a good Web framework.</p>
 <p><a href="http://en.wikipedia.org/wiki/JavaScript"><strong>JavaScript</strong></a> is (surprise) another OO dynamic language. Gee, these sure are popular, aren't they? Especially this one. JavaScript is used all over the Web for client-side scripting and interactivity, and sometimes on the back-end as well (usually in the form of <a href="http://nodejs.org/">Node.js</a>). JavaScript has a more interesting take on OOP, borrowing <a href="http://en.wikipedia.org/wiki/Prototype-based_programming">prototypal inheritance</a> from the <a href="http://en.wikipedia.org/wiki/Self_(programming_language)">Self language</a>. Other than that, it is your generic C-like language, besides some <em>interesting</em> design features like super weak typing that make it very easy for errors to pass unnoticed in your code, often being hard to debug. For that reason alone I will not recommend it as a beginners language, but if you are getting into the Web industry you might be interested.</p>
 <p>There are quite a few languages that compile down to JS, most notably <a href="http://coffeescript.org/">CoffeeScript</a>. These are often used in lieu of just plain JS.</p>
