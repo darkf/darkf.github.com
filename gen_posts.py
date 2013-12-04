@@ -17,7 +17,7 @@ PRE = """<!doctype html>
 </head>
 <body>
 <div id="content">
-	<a href="http://darkf.github.io">&lt;</a> <span id="time">published %(authored)s</span>
+	<a href="http://darkf.github.io">&lt;</a> <span id="time">published %(authored)s %(lastmodified)s</span>
 	<br/><br/>
 	<h2>%(title)s</h2>
 	<hr/>
@@ -37,5 +37,6 @@ for post in posts:
 
 	with open(os.path.join("posts", filename), "r") as postsrc:
 		with open(os.path.join("posts", splitext(filename)[0]+".html"), "w") as g:
-			pre = PRE % {"title": post["title"], "authored": date}
+			lastmodified = "last modified " + datetime.date.fromtimestamp(post["lastmodified"]).strftime(DATE_FORMAT) if "lastmodified" in post else ""
+			pre = PRE % {"title": post["title"], "authored": date, "lastmodified": lastmodified}
 			g.write(pre+markdown(postsrc.read())+POST)
