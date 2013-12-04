@@ -36,14 +36,16 @@ Thankfully there is not much difference between these two in terms of technologi
 
 There is a lot of confusion surrounding what programming language to pick when learning. Some parties might recommend using [C++](http://en.wikipedia.org/wiki/C++), some [C#](http://en.wikipedia.org/wiki/C_Sharp_(programming_language)), or some something else entirely. Again, it does not matter where you start, however some programming languages are easier to get started *learning how to program*. You want to strike a balance between these.
 
-Programming Languages: Beginner Summary
-==============================
+Programming Languages: Beginner Version
+=======================================
 
-If you're just starting off, here's a list of great and popular languages for beginners and experienced programmers alike. If you're just starting off, I recommend skipping the next sections (don't worry, they're just filled with [technobabble](http://en.wikipedia.org/wiki/Technobabble) rambling) and jumping to the conclusion, then diving into your language of choice! Pick one that sounds the most fun to you.
+If you're just starting off, here's a list of great and popular languages for beginners and experienced programmers alike; I also recommend skipping the next sections (don't worry, they're just filled with [technobabble](http://en.wikipedia.org/wiki/Technobabble) rambling) and jumping to the conclusion, then diving into your language of choice! Pick one that sounds the most fun to you.
 
 I recommend you steer clear of pay sites that offer you courses to learn. You can get by just fine (if not better) using only free resources. Some of these sites give a very superficial overview and I cannot recommend them.
 
 Now, on to the list:
+
+### Python
 
 [**Python**](http://en.wikipedia.org/wiki/Python_(programming_language)) is an amazing general-purpose language that will let you go far and wide. It's easy to pick up, beginner-friendly, powerful, robust, well-designed, and comes batteries-included with tons of libraries for you to play with and make cool things. I recommend it as a first language and to anyone else.
 
@@ -70,6 +72,8 @@ For some cool libraries (code written by others that you can use to build things
   - [**numpy**](http://www.numpy.org/) for numerical processing
 
 
+### Ruby
+
 [**Ruby**](http://en.wikipedia.org/wiki/Ruby_(programming_language)) is another good general-purpose language, and is very similar to Python. An example of it:
 
     total = 0
@@ -86,6 +90,8 @@ To get started learning Ruby, try out the [Poignant Guide to Ruby](http://www.ru
 For some cool stuff to use to build your programs:
 
   - [**Sinatra**](http://www.sinatrarb.com/) for building websites
+
+### C# ###
 
 [**C#**](http://en.wikipedia.org/wiki/C_Sharp_(programming_language)) is a good general-purpose language as well; this time diverging from Python or Ruby by being *statically typed* -- meaning you need to tell the computer what *type* (such as number, text, date, etc) a value is. Here's what our example program looks like in C#:
 
@@ -136,11 +142,17 @@ Now that you know some parlance, let's tackle some common technologies and their
 Some sects, such as **video game programmers**, often use [C++](http://en.wikipedia.org/wiki/C++) and [C#](http://en.wikipedia.org/wiki/C_Sharp_(programming_language)).
 C++ is a notoriously massive and arduous language, with historical artifacts from C. Modern ([C++11](http://en.wikipedia.org/wiki/C++11) and soon to be [C++14](http://en.wikipedia.org/wiki/C%2B%2B14)) C++ is often written at a higher level (using features such as iterators, smart pointers, references, etc.) than more archaic C++ (which often use C remnants such as unwrapped arrays, raw pointers, et cetera.)
 
+#### C++
+
 [**C++**](http://en.wikipedia.org/wiki/C++) is not necessarily a bad place to end up, but it might not be the best for beginning. Should you ever choose it, however, [C++ Primer](http://www.amazon.com/Primer-5th-Edition-Stanley-Lippman/dp/0321714113) (not to be confused with C++ Primer Plus) is a good place to start.
 [C++ Reference](http://en.cppreference.com/w/) is a great reference site to use as well.
 C++ is good for low-level systems programming (such as operating systems, or video games) that require high performance. It does sacrifice quite a lot of [type safety]() to achieve that, compilation times can be slow, and the process of compilation is often tedious.
 
+#### C# ####
+
 [**C#**](http://en.wikipedia.org/wiki/C_Sharp_(programming_language)) is not a bad place to start. It is a statically-typed object-oriented language in the style of *Java*. Visual C# (Microsoft's IDE) and [SharpDevelop](http://www.icsharpcode.net/opensource/sd/) (a third-party one) provide an easy but powerful drag-and-drop interface for creating graphical (GUI) applications. [Mono](http://www.mono-project.com/Main_Page) (and [MonoGame](http://monogame.codeplex.com/) for video games) is a good framework for building applications and deploying them to PC, Mac, iOS, Android, and other platforms.
+
+#### Python
 
 [**Python**](http://en.wikipedia.org/wiki/Python_(programming_language)) is an dynamically-typed object-oriented/functional interpreted language. It is a great beginner language, but not just for them - it is extremely capable and great for small and mid-sized tasks.
 It offers high-level features, such as first-class functions, object orientation, modules to cleanly separate source code, and operations for easily working with text, lists, sets, mappings, etc. Being dynamically typed means it will not be able to catch type errors (such as adding a string to a number) at compile-time (i.e. when you first launch the program), but only at run-time (i.e., when the faulty expression is evaluated.) With proper practice this is usually not much of an issue.
@@ -151,13 +163,19 @@ For Web development, Python has some good libraries: [**Flask**](http://flask.po
 For video games, [**Pygame**](http://www.pygame.org/news.html) is a nice framework, as well as [Pyglet](http://www.pyglet.org/) and [Cocos2D](http://cocos2d.org/). There are some 3D engines like [Panda3D](https://www.panda3d.org/) used by, for example, Disney Interactive.
 Scientists often use Python as well for numerical calculations, with [numpy](http://www.numpy.org/) and [scipy](http://www.scipy.org/).
 
+#### Ruby
+
 [**Ruby**](http://en.wikipedia.org/wiki/Ruby_(programming_language)) is also a dynamic interpreted language like Python, but with more loose, expression-based syntax. It borrows a lot of concepts from good ol' [Smalltalk](http://en.wikipedia.org/wiki/Smalltalk).
 
 A good resource for learning Ruby is [The Poignant Guide to Ruby](http://www.rubyinside.com/media/poignant-guide.pdf) or one of the other [good resources](https://www.ruby-lang.org/en/documentation/) available.
 
 For Web development, [**Sinatra**](http://www.sinatrarb.com/) is a good and elegant microframework, and [**Rails**](http://rubyonrails.org/) is a **very** popular heavier framework.
 
+#### PHP
+
 [**PHP**](http://en.wikipedia.org/wiki/PHP) is another dynamic language. It is almost solely used for Web development, but it is often [considered poorly designed](http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/), and it is easy to introduce hard-to-find bugs. If you are looking to get into the PHP industry, go for it. If not, you might save yourself a headache or few. Laravel is a good Web framework.
+
+#### JavaScript
 
 [**JavaScript**](http://en.wikipedia.org/wiki/JavaScript) is (surprise) another OO dynamic language. Gee, these sure are popular, aren't they? Especially this one. JavaScript is used all over the Web for client-side scripting and interactivity, and sometimes on the back-end as well (usually in the form of [Node.js](http://nodejs.org/)). JavaScript has a more interesting take on OOP, borrowing [prototypal inheritance](http://en.wikipedia.org/wiki/Prototype-based_programming) from the [Self language](http://en.wikipedia.org/wiki/Self_(programming_language)). Other than that, it is your generic C-like language, besides some *interesting* design features like super weak typing that make it very easy for errors to pass unnoticed in your code, often being hard to debug. For that reason alone I will not recommend it as a beginners language, but if you are getting into the Web industry you might be interested.
 
@@ -165,7 +183,11 @@ There are quite a few languages that compile down to JS, most notably [CoffeeScr
 
 A good resource to learn JavaScript might be [JavaScript: The Good Parts](http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742).
 
+#### Haxe
+
 [**Haxe**](http://en.wikipedia.org/wiki/Haxe) is a statically-typed object-oriented language. Its main novelty is the ability to use the same code-base across many different platforms, compiling to JavaScript, C++, C#, `.swf` (Flash), or the Neko VM. It is particularly well-suited (and indeed used much for) for 2D cross-platform video games with libraries such as [HaxeFlixel](http://haxeflixel.com/), [HaxePunk](http://haxepunk.com/), and [OpenFL](http://www.openfl.org/), all of them working cross-platform.
+
+#### Scheme and Racket
 
 [**Scheme**](http://en.wikipedia.org/wiki/Scheme_(programming_language)) and [**Racket**](http://racket-lang.org/) are derivations of the ages-old [LISP](http://en.wikipedia.org/wiki/Lisp_(programming_language)) programming language. This family is known for its ridiculous extensibility. If you feel like you're lacking something from the language, it's trivial to just add it! LISP code *is data* -- code is just lists. You can modify these lists and thus modify code *at runtime* as well. Its extensive macro systems provide more flexibility for metaprogramming as well.
 
