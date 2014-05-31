@@ -100,7 +100,7 @@ So, instead, I reference into this table and call the relevant procedure, which 
 By this point, I could have a full conversation over the console, but that's not good enough.
 So I implemented a basic GUI for it. It looks like this:
 
-![DarkFO Dialogue GUI](darkfo-dialogue.png)
+<a href="darkfo-dialogue.png"><img src="darkfo-dialogue.png" alt="DarkFO Dialogue GUI" width="860" height="380"></a>
 
 ...And it works! *Hurrah!* We can have a full conversation with this merchant, asking him questions about the town, and even asking about his wares. (Bartering mode is not implemented yet, so it just acts like it proceeded normally.)
 

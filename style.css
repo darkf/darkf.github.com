@@ -1,6 +1,6 @@
 body { font-family: sans-serif; }
 a { color: gray; text-decoration: none; }
 a:hover { color: black; text-decoration: underline; }
-#content { margin-left: auto; margin-right: auto; border: 1px solid gray; border-radius: 6px; padding: 3px; width: 75%; }
+#content { margin-left: auto; margin-right: auto; border: 1px solid gray; border-radius: 6px; padding: 3px; width: 75%; overflow: auto; }
 h2, ul { margin-top: 0; margin-bottom: 0; }
 #time { float: right; font-size: 0.6em; color: gray; }

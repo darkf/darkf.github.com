@@ -73,7 +73,7 @@ But what about actually <em>choosing</em> options? Well, if you'll notice, <code
 So, instead, I reference into this table and call the relevant procedure, which then carries on the continuation of the conversation. That's how control flow is handled.</p>
 <p>By this point, I could have a full conversation over the console, but that's not good enough.
 So I implemented a basic GUI for it. It looks like this:</p>
-<p><img alt="DarkFO Dialogue GUI" src="darkfo-dialogue.png" /></p>
+<p><a href="darkfo-dialogue.png"><img src="darkfo-dialogue.png" alt="DarkFO Dialogue GUI" width="860" height="380"></a></p>
 <p>...And it works! <em>Hurrah!</em> We can have a full conversation with this merchant, asking him questions about the town, and even asking about his wares. (Bartering mode is not implemented yet, so it just acts like it proceeded normally.)</p>
 <p>The control flow works as you'd expect. You can go deeper into the tree of options, and you can go back up, and you can exit dialogue with what is usually the last option.</p>
 <p>Since scripts may implement their own variants of <code>Node999</code> (dialogue exit) and such, I actually remove those for my own default implementation (just hiding the dialogue screen.)
