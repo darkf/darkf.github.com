@@ -10,7 +10,7 @@ By this time, I realize that I will need to start adding in the meat of the game
 
 The *Fallout 2* scripting language does not support objects or records, but it *does* support pointers (which are just an integral type. I am not entirely sure if the language has actual types -- by far the most used types of values are integers, strings only coming in with debug or display messages, where it's shown that the `+` operator is overloaded to concatenate strings and coerce integers to strings as well.)
 
-Objects (such as critters (a generic term for actors in the world; strangely enough includes refrigerators)) are referred to by pointers. The most common object reference is, of course, the player object, called `obj_dude` in scripting parlance.
+Objects (such as critters -- a generic term for actors in the world) are referred to by pointers. The most common object reference is, of course, the player object, called `obj_dude` in scripting parlance.
 Originally I had given this a string (a dynamic language turns out to be very useful as a language target) as an initial test value, but now I set it to an actual instance of a an object -- an actual player object, set with the Vault 13 jumpsuit somewhere on the map.
 The cool thing is that instead of passing a pointer around, I can simply pass the object reference around and access it directly in my functions.
 
