@@ -13,6 +13,7 @@ PRE = """<!doctype html>
 <html>
 <head>
   <title>%(title)s</title>
+  <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="../style.css"/>
 </head>
 <body>
@@ -39,4 +40,5 @@ for post in posts:
 		with open(os.path.join("posts", splitext(filename)[0]+".html"), "w") as g:
 			lastmodified = "last modified " + datetime.date.fromtimestamp(post["lastmodified"]).strftime(DATE_FORMAT) if "lastmodified" in post else ""
 			pre = PRE % {"title": post["title"], "authored": date, "lastmodified": lastmodified}
-			g.write(pre+markdown(postsrc.read())+POST)
+			body = pre + markdown(postsrc.read().decode('utf-8')) + POST
+			g.write(body.encode('utf-8'))
