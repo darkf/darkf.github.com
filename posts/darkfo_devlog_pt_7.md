@@ -137,7 +137,7 @@ However, slots still did not let you win, no matter if you gambled away an infin
 
 This was because of my confusion in my own scripting stubs: the function for rolling a 1d100 die against a particular skill (in this case Gambling) was stubbed to always return `1` (supposed to indicate success) in DarkFO. This is fine, but that `1` was being passed to `is_success`, which was logged to the console in a display of "`is_success: 1`". Now, I would think that meant `is_success` *returned* `1` (a success), but in fact it was returning `0` (failure). Alas, we always lost our infinite pool of money.
 
-I spent the rest of the day on reverse engineering `roll_vs_skill` only to find out it behaves like combat rolls do, in that it does a 1d100 roll vs your skill level (plus any modifiers), and then rolls a 1d10 vs the first roll / 10 for a critical success or critical failure roll.
+I spent the rest of the day on reverse engineering `roll_vs_skill` only to find out it behaves like combat rolls do, in that it does a 1d100 roll vs your skill level (plus any modifiers), and then rolls a 1d100 vs the first roll / 10 for a critical success or critical failure roll.
 
 I thought the slots themselves were interesting, though: there are three tiers of them. There are Normal slots, High Roller slots, and Jackpot slots. They each have varying payoffs: their minimum and maximum bets increase as well as what they give you.
 In additions, Jackpot slots have a chance at gaining you quite a bit of caps, up to $2500 I believe. Unfortunately, after you jackpot, they simply break into a terminal of "Out Of Service". Probably after you've already spent $2500 on the damn machine, but I digress.
