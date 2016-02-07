@@ -57,9 +57,9 @@ If you were wondering, this is how rasterized triangles look (with a constant li
 
 <a href="darkfo-triangles.png"><img src="darkfo-triangles.png" alt="DarkFO Triangles" width="675" height="165"></a>
 
-That's all possible configurations of them.
+That's all possible configurations of upside-down triangles.
 
-This is how they look mashed together into one, which is how they'd be blended onto a tile:
+This is how all triangles (rightside-up and upside-down) look mashed together into one composite, which is how they'd be blended onto a tile:
 
 <a href="darkfo-triangles-together.png"><img src="darkfo-triangles-together.png" alt="DarkFO Triangles Together" width="80" height="80"></a>
 
