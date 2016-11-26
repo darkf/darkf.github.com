@@ -49,5 +49,5 @@ for post in posts:
 		with open(os.path.join("posts", splitext(filename)[0]+".html"), "w") as g:
 			lastmodified = "last modified " + datetime.date.fromtimestamp(post["lastmodified"]).strftime(DATE_FORMAT) if "lastmodified" in post else ""
 			pre = PRE % {"title": post["title"], "authored": date, "lastmodified": lastmodified}
-			body = pre + markdown(postsrc.read()) + POST
+			body = pre + markdown(postsrc.read(), extensions=["markdown.extensions.tables"]) + POST
 			g.write(body)
