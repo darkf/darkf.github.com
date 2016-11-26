@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+  <title>How I Write Code</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="../style.css"/>
+</head>
+<body>
+<div id="content">
+	<a href="http://darkf.github.io">&lt;</a> <span id="time">published March 10, 2013 </span>
+	<br/><br/>
+	<h2>How I Write Code</h2>
+	<hr/>
+	<p>I woke up today and thought, "I should document the method I use to write code, even if it's not useful to anyone!" So, here I go.</p>
+<p>I like to think of writing code as a bit like how an artist might workflow a drawing. With some idea of what they want to create, they begin work on the skeleton - blocking out the rough shapes and outlines. Once that has taken shape, they refine edges, erase blocks, and fill them in with detailed curves and lines. After all this is done, they start polishing and painting, until they arrive at the mostly final piece - a canvas of art that is hopefully pretty to look at!</p>
+<p>Let's see how we can apply this workflow to programming.</p>
+<h2>Skeleton</h2>
+<p>There are different ways to approach this that professional programmers use. Perhaps the  most commonly known is Test-Driven Development, where programmers write unit tests to describe how their program should behave before even implementing it.</p>
+<p>I prefer to define just the <em>interface</em> of the program first. By interface I mean a rough block-out of functions or methods and of data members - not implementing anything, just defining a loose structure.</p>
+<p>As an example, say we're making a banking application (boring, I know!) where accounts hold a balance, can withdrawl and deposit currency. Let's define a Java interface for this:</p>
+<pre><code>public class Account {
+    private double balance = 0; /** The amount of currency the account holder currently has. */
+
+    /** Get the account balance */
+    private double getBalance() {
+    }
+
+    /** Set the account balance */
+    private void setBalance(double newBalance) {
+    }
+
+    /** Withdrawl currency from the account */
+    private void withdrawl(double amount) {
+    }
+
+    /** Deposit currency to the account */
+    private void deposit(double amount) {
+    }
+
+    /** Is the user overdrawn? */
+    private bool isOverdrawn() {
+    }
+}
+</code></pre>
+<p>Of course, you wouldn't use a <code>double</code> for real-world financial code, but that's the beauty of examples!
+If you find that something doesn't work, it is very easy to change things at this stage. Once you're <em>done</em> (hint: you're never <em>really</em> done) you have a nice specification. What's left is basic implementation!</p>
+<h2>Minimal Implementation</h2>
+<p>Programming is an incremental process. Instead of just implementing all of the features and then testing it, why don't we write the most fundamental features first, and then test those? Let's roghly block in the implementation of our account. Overdrawing functionality isn't crucial right now, so let's do the rest and stub <code>isOverdrawn</code>:</p>
+<pre><code>public class Account {
+    private double balance = 0; /** The amount of currency the account holder currently has. */
+
+    /** Get the account balance */
+    private double getBalance() {
+        return balance;
+    }
+
+    /** Set the account balance */
+    private void setBalance(double newBalance) {
+        balance = newBalance;
+    }
+
+    /** Withdrawl currency from the account */
+    private void withdrawl(double amount) {
+        balance -= amount;
+    }
+
+    /** Deposit currency to the account */
+    private void deposit(double amount) {
+        balance += amount;
+    }
+
+    /** Is the user overdrawn? */
+    private bool isOverdrawn() throws Exception {
+        throw new Exception("Not implemented");
+    }
+}
+</code></pre>
+<p>There! That was easy. We just went through and implemented what functionality we needed, and left the rest to do afterwards. You might ask why we don't just return some dummy value like <code>false</code> in <code>isOverdrawn</code> - what if we forget that it's not implemented? We might use it thinking that it works, and we'd be scratching our heads. Instead, a clear error such as this indicates that you need to fill in some more code!</p>
+<h2>Final Touches</h2>
+<p>For completeness we'll implement the remaining method:</p>
+<pre><code>    /** Is the user overdrawn? */
+    private bool isOverdrawn() {
+        return balance &lt; 0;
+    }
+</code></pre>
+<p>And now any code that uses ours <em>should</em> work! We might want to add tests afterwards to verify, but it works! We have a program, built incrementally from a few basic steps.</p>
+<h2>Conclusion</h2>
+<p>Unfortunately, you can't pull something out of nothing. What you can do is take things, transform them, and use them as building blocks to something. Programming is just a puzzle - given some things in your toolbox (loops, recursion, conditionals, etc), how do you combine those things to make a coherent program that does what you want?</p>
+<p>Things are as simple as you want to make them. You shouldn't worry too much about <em>how</em> you do things as long as it works for you. If you're going to drink kool-aid, drink yours, not others' for the sake of it!</p>
+<p>Happy Hacking.</p>
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40278551-2', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>

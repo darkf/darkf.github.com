@@ -3,7 +3,7 @@ from os.path import splitext, basename
 from markdown import markdown
 
 if not os.path.exists("posts.json"):
-	print "You need a `posts.json` file!"
+	print("You need a `posts.json` file!")
 	sys.exit(1)
 
 DATE_FORMAT = "%B %d, %Y"
@@ -43,11 +43,11 @@ posts = json.load(open("posts.json", "r"))
 for post in posts:
 	date = datetime.date.fromtimestamp(post["authored"]).strftime(DATE_FORMAT)
 	filename = post["filename"]
-	print 'Generating "%s" (%s)' % (post["title"], date)
+	print('Generating "%s" (%s)' % (post["title"], date))
 
 	with open(os.path.join("posts", filename), "r") as postsrc:
 		with open(os.path.join("posts", splitext(filename)[0]+".html"), "w") as g:
 			lastmodified = "last modified " + datetime.date.fromtimestamp(post["lastmodified"]).strftime(DATE_FORMAT) if "lastmodified" in post else ""
 			pre = PRE % {"title": post["title"], "authored": date, "lastmodified": lastmodified}
-			body = pre + markdown(postsrc.read().decode('utf-8')) + POST
-			g.write(body.encode('utf-8'))
+			body = pre + markdown(postsrc.read()) + POST
+			g.write(body)
