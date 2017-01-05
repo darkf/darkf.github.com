@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+  <title>Problems I Have With Python</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="../style.css"/>
+</head>
+<body>
+<div id="content">
+	<a href="http://darkf.github.io">&lt;</a> <span id="time">published January 05, 2017 </span>
+	<br/><br/>
+	<h2>Problems I Have With Python</h2>
+	<hr/>
+	<p>I've been using Python for about 10 years now. I love the language as much as I can any, and for the most part I enjoy writing in it -- and reading it.</p>
+<p>However, despite its qualities it also shares quite a few massive flaws that slow me down and make me groan and sigh while attempting to solve problems in it. These are obvious flaws in design, in my opinion, that warrant re-looking at, but to which no real improvements are being made for some reason. (Incompetence? Politics? Both? Who knows.)</p>
+<p>There are some languages (such as <a href="http://coconut-lang.org/">Coconut</a>) which transpile to Python, but I argue that I should not <em>have</em> to build a better language on top of an already decent one.</p>
+<p>Why can't Python accept some fairly sane changes and improve its experience throughout? Things other languages have and are well-received? Remove inconsistencies, and add useful features? Is that not what a growing languages aspires to -- or should?</p>
+<p>With that in mind, here are some of the common issues I have with Python. Remember that it's a matter of opinion, although they stem from experience. Without further ado:</p>
+<ul>
+<li>
+<p>The standard interpreter bring rather slow; PyPy is nice, but its Python 3 support is very immature.</p>
+</li>
+<li>
+<p>Parallelism is very bad on CPython and PyPy; threads are subject to the Global Interpreter Lock (GIL),
+    and one must use <code>multiprocessing</code> (which comes with its own bag of oddities) to get real parallelism.</p>
+</li>
+<li>
+<p><code>asyncio</code> does not seem very well integrated, and does not seem as useful as libraries like <code>eventlet</code>.
+    They seem to have wanted to reinvent Twisted, but did so half-assed and did not include useful protocols
+    (Twisted has line-based protocols, HTTP, etc. built in and easily subclassable.)</p>
+</li>
+<li>
+<p>Quite a few legacy projects are written in Python 2, and it <em>can</em> take some work to port them.
+    This is particularly a pain for libraries where I expect to <code>pip install</code> them and have them "Just Work".</p>
+<p>There is an official tool <code>2to3</code> which does not work in all cases.</p>
+</li>
+<li>
+<p>The standard library is sometimes inconsistent
+    For example, the <code>str</code> type has a <code>split</code> method but <code>list</code> does not. Even weirder, <code>str</code> and <code>list</code> both have <code>find</code>, but <code>list</code> does not have <code>index</code> (a related method).</p>
+<p>Naming is sometimes inconsistent, despite Python 3's attempt at standardizing it.</p>
+</li>
+<li>
+<p>Inadequate support for high-level functional programming</p>
+<p>The BDFL himself, Guido van Rossum, has infamously declared that he does not like functional programming
+(odd, considering the language is built around FP concepts), and that <code>map</code>/<code>reduce</code>/<code>filter</code> should not be
+in the language. Well -- in my opinion that is a grave mistake, but more importantly the language suffers.</p>
+<p><code>reduce</code> is now tucked away inside the <code>functools</code> module (as of Python 3), even though it is the only one
+of <code>map</code>/<code>filter</code> that is <em>not</em> replaceable by list/set/dict comprehensions! Yet <code>map</code> and <code>filter</code> are still
+in the base global environment. What sense does that make?</p>
+<p><code>itertools</code> is useful, but duplicates quite a bit and does not include many useful functions standard in a lot of FP language standard libraries.
+It's also not too clear how some of them maybe use: I often find myself reimplementing <code>flatten</code> as <code>flatten = lambda xs: itertools.chain.from_iterable(*xs)</code> (what a mouthful), as if I were supposed to figure this out on my own, instead of just providing a <code>flatten</code> (and <code>flatmap</code>) function.</p>
+<p>For that matter -- flattening is something that should be so common that it were given a place in the global function set, but there is not even a way to do it in syntax.</p>
+<p>Early in <a href="https://www.python.org/dev/peps/pep-0448/#variations">PEP 0448</a> was a proposed syntax for flattening in comprehensions:</p>
+<pre><code>&gt;&gt;&gt; ranges = [range(i) for i in range(5)]
+&gt;&gt;&gt; [*item for item in ranges]
+[0, 0, 1, 0, 1, 2, 0, 1, 2, 3]
+</code></pre>
+<p>This would have been very useful and allow flattening inline in comprehensions, but "this was met with a mix of strong concerns about readability and mild support." Sigh. (Nothing about that looks "unreadable" to me.)</p>
+<p>The lack of tail call optimization in most implementations makes writing tail recursive algorithms rather pointless, unfortunately, even when they may be more legible than their iterative counterparts.</p>
+<p>There is no standard way (even in <code>functools</code>) to compose functions. There is partial application via <code>functools.partial</code>, at least...</p>
+</li>
+<li>
+<p>Lambda is awful</p>
+<p>BDFL again stated that it was a mistake approving it, although again I disagree -- even in its abysmal state. Without it, I would not even use Python any longer.</p>
+<p>Quite to the point, lambdas (anonymous closures) in Python are gimped. They are single-expression functions,
+which means <em>no statements</em>, even <code>global</code>/<code>nonlocal</code> qualifiers. Prior to Python 3, this meant you couldn't even use <code>print</code> (then a statement) in them! What nonsense.</p>
+<p>I imagine that attempts at making lambda not suck are met with "But that would require braces / funky indentation!" Well... what's worse, having a slightly goofy looking inline "def", or having a gimped language?
+Guido seems to add a lot of other dubious garbage, why not something useful? For the sake of some perceived "clarity"? Come on.</p>
+</li>
+<li>
+<p>Inadequate data modelling facilities</p>
+<p>Python classes are useful, but it is a <em>ton</em> of boilerplate to write variant classes such as:</p>
+<pre><code>class Node: pass
+class FooNode(Node):
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+class BarNode(Node): pass
+</code></pre>
+<p>Which is not even very useful, as there are no distinguishable <code>__str__</code>/<code>__repr__</code> methods on it, no comparisons between them other than identity equality, etc.</p>
+<p>Named tuples (<code>collections.namedtuple</code>) would better solve this, but unfortunately they're immutable (like normal Python tuples) and thus make bad "bag of mutable data" objects.</p>
+<p>Enums are also quite awful: your choices are using plain old strings or integers, or using the <code>enum</code> library which is not very widely used and has its own little quirks.</p>
+<p>My propsal would be the addition of algebraic data types (aka "discriminated unions"), similar to how <a href="http://coconut-lang.org/">Coconut</a> does it, and how many functional programming languages do it.</p>
+</li>
+<li>
+<p>Lack of <code>switch</code> (or <code>match</code>)</p>
+<p>No, dicts with lambdas (see above) are not a replacement. No, long if-else chains are not a replacement.
+I want a nice way to match on data (preferably richly -- as with ADTs, ranges, ...) and associate matches
+with logic.</p>
+<p>Please do not suggest awful hacks to do this, and fix your language instead.</p>
+</li>
+</ul>
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40278551-2', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
