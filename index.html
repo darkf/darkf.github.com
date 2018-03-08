@@ -1,0 +1,14 @@
+---
+title: Home
+layout: default
+---
+
+<a href="https://github.com/darkf"><em>darkf</em></a>'s page
+<br/><br/>
+
+<h2>Blog Entries</h2>
+<ul>
+    {% for post in site.posts %}
+        <li><a href="{{ post.url | absolute_url }}">{{ post.title }}</a> <!--<small>{{ post.date | date: '%B %d, %Y' }}</small>--></li>
+    {% endfor %}
+</ul>
